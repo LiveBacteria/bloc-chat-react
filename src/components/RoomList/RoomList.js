@@ -19,7 +19,7 @@ class RoomList extends Component {
         this.roomsRef.on('child_added', snapshot => {
             //newRoomList.concat(snapshot);
             const room = snapshot.val();
-            room.key = snapshot.key;
+            //room.key = snapshot.key;
             this.setState({rooms: this.state.rooms.concat( room )})
         });
     }
@@ -49,7 +49,9 @@ class RoomList extends Component {
                 <section id="rooms">
                     <div>
                         {this.state.rooms.map((room) =>
-                            <div key={room.key}>
+                            <div key={room.key} onClick={() => this.props.setActiveRoom(room)} className={
+                                (this.props.activeRoom == room.name) ? 'active' : ''
+                            }>
                                 {room.name}
                             </div>
                             )
