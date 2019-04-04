@@ -19,9 +19,9 @@ class MessageList extends Component {
     render() {
         return(
             <div>
-                {this.state.msgs.map((item) =>
+                {this.state.msgs.map((item, index) =>
                     (item.roomId === this.props.activeRoom) ?
-                        <div>
+                        <div key={'msg' + index}>
                             <p>
                                 {item.username}<br/>
                                 {item.sentAt}<br/>

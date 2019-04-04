@@ -48,8 +48,8 @@ class RoomList extends Component {
                 </section>
                 <section id="rooms">
                     <div>
-                        {this.state.rooms.map((room) =>
-                            <div key={room.key} onClick={() => this.props.setActiveRoom(room)} className={
+                        {this.state.rooms.map((room, index) =>
+                            <div key={index} onClick={() => this.props.setActiveRoom(room)} className={
                                 (this.props.activeRoom == room.name) ? 'active' : ''
                             }>
                                 {room.name}
