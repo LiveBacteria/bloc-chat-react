@@ -35,7 +35,7 @@ class RoomList extends Component {
     }
 
     createRoom (roomInfo) {
-        this.roomsRef.push({name: roomInfo})
+        this.roomsRef.push({name: roomInfo, createdAt: this.props.firebase.database.ServerValue.TIMESTAMP})
     }
 
     render() {

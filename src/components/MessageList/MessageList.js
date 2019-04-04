@@ -16,6 +16,15 @@ class MessageList extends Component {
         });
     }
 
+    parseHumanTimeDate (timestamp) {
+        if(typeof timestamp !== "number"){
+            return 'No Data';
+        }else{
+            const newDate = new Date(timestamp);
+            return newDate.toDateString();
+        }
+    }
+
     render() {
         return(
             <div>
@@ -24,7 +33,7 @@ class MessageList extends Component {
                         <div key={'msg' + index}>
                             <p>
                                 {item.username}<br/>
-                                {item.sentAt}<br/>
+                                {this.parseHumanTimeDate(item.sentAt)}<br/>
                                 {item.content}<br/>
                                 {item.roomId}<br/>
                             </p>

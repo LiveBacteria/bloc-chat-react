@@ -36,3 +36,13 @@
   display: inline-block;
   width: 85%;
 }
+
+#sign-in-button {
+  z-index: 2;
+  position: fixed;
+  left: 0;
+  bottom: 5%;
+  height: 2%;
+  width: 5%;
+  background-color: red;
+}
