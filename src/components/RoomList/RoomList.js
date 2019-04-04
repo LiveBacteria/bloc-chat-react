@@ -50,7 +50,7 @@ class RoomList extends Component {
                     <div>
                         {this.state.rooms.map((room, index) =>
                             <div key={index} onClick={() => this.props.setActiveRoom(room)} className={
-                                (this.props.activeRoom == room.name) ? 'active' : ''
+                                (this.props.activeRoom === room.name) ? 'active' : ''
                             }>
                                 {room.name}
                             </div>
@@ -63,7 +63,7 @@ class RoomList extends Component {
                     <div>
                         <form onSubmit={this.handleSubmit} >
                             <input type="text" id="nameEntry" value={this.state.value} onChange={this.handleChange} />
-                            <input type="submit" value="Create Room"/>
+                            <input type="submit" value="Create Room" disabled={(this.state.value === '') ? 'disabled' : ''}/>
                         </form>
                     </div>
                 </section>
