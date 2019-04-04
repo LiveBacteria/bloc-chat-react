@@ -63,7 +63,7 @@ class RoomList extends Component {
                     <div>
                         <form onSubmit={this.handleSubmit} >
                             <input type="text" id="nameEntry" value={this.state.value} onChange={this.handleChange} />
-                            <input type="submit" value="Create Room" disabled={(this.state.value === '') ? 'disabled' : ''}/>
+                            <input type="submit" value="Create Room" disabled={(this.state.value === '' ) ? 'disabled' : ''}/>
                         </form>
                     </div>
                 </section>
