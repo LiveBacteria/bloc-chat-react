@@ -34,8 +34,8 @@ class MessageList extends Component {
                         <div key={'msg' + index}>
                             <ul>
                                 <li className="username">{item.username}</li>
-                                <li className="msgContent">{item.content}</li>
                                 <li className="timestamp">{this.parseHumanTimeDate(item.sentAt)}</li>
+                                <li className="msgContent">{item.content}</li>
                             </ul>
                     </div> : ''
                 )}

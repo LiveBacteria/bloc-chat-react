@@ -1,3 +1,18 @@
+
+.roomListInfo {
+    background-color: darkgray;
+    float: left;
+    width: 15%;
+    height: 100vh;
+    padding: 0.05em;
+}
+
+.active {
+    transition: background-color 0.2s ease-in-out;
+    background-color: white;
+    color: black;
+}
+
 /*
 #room-list {
     position: fixed;
@@ -15,10 +30,6 @@
     border-radius: .5em;
 }
 
-.active {
-    transition: background-color 0.2s ease-in-out;
-    background-color: white;
-    color: black;
-}
+
 
 */
