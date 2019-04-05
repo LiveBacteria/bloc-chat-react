@@ -1,0 +1,29 @@
+.message {
+    background-color: lightgrey;
+}
+
+.alter {
+    background-color: teal;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+.username {
+    left: 0;
+    font-weight: bold
+}
+
+.msgContent {
+    text-align: justify;
+}
+
+.timestamp {
+    right: 100%;
+}
+
+li {
+    display: flex;
+}

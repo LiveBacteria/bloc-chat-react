@@ -1,12 +1,12 @@
+/*
 #room-list {
     position: fixed;
     left: 0;
     height: 100%;
-    width: 15%;
     background-color: #797979;
     overflow-x: hidden;
     /*padding-top: .5em;*/
-}
+/*}
 
 #rooms {
     background-color: darkgray;
@@ -16,6 +16,9 @@
 }
 
 .active {
+    transition: background-color 0.2s ease-in-out;
     background-color: white;
     color: black;
 }
+
+*/

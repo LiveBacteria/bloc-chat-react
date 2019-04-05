@@ -43,14 +43,22 @@ class App extends Component {
   render() {
     return (
         <div className="App">
-          <RoomList firebase={firebase} setActiveRoom={this.setActiveRoom} activeRoom={this.state.activeRoom}/>
-          <div className="roomContent">
-            <h1 className="roomId">
+          <div className="roomId">
+            <h1>
               {this.state.activeRoom}
             </h1>
-            <MessageList firebase={firebase} activeRoom={this.state.activeRoom} />
           </div>
-          <User firebase={firebase} setUser={this.setUser} user={this.state.user}/>
+          <div className="roomListInfo">
+            <RoomList firebase={firebase} setActiveRoom={this.setActiveRoom} activeRoom={this.state.activeRoom}/>
+            <div className="userInfo">
+              <User firebase={firebase} setUser={this.setUser} user={this.state.user}/>
+            </div>
+          </div>
+          <div className="roomContent">
+            <div className="messageList">
+              <MessageList firebase={firebase} activeRoom={this.state.activeRoom} />
+            </div>
+          </div>
         </div>
     );
   }

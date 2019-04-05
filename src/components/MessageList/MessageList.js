@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './MessageList.css'
 
 class MessageList extends Component {
     constructor(props){
@@ -31,12 +32,11 @@ class MessageList extends Component {
                 {this.state.msgs.map((item, index) =>
                     (item.roomId === this.props.activeRoom) ?
                         <div key={'msg' + index}>
-                            <p>
-                                {item.username}<br/>
-                                {this.parseHumanTimeDate(item.sentAt)}<br/>
-                                {item.content}<br/>
-                                {item.roomId}<br/>
-                            </p>
+                            <ul>
+                                <li className="username">{item.username}</li>
+                                <li className="msgContent">{item.content}</li>
+                                <li className="timestamp">{this.parseHumanTimeDate(item.sentAt)}</li>
+                            </ul>
                     </div> : ''
                 )}
             </div>
