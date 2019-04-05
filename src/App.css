@@ -16,6 +16,7 @@
 }
 
 .roomContent {
+  margin-left: 15vw;
   border: 2px solid darkgrey;
   border-radius: 2px;
   padding: 0.05em;
@@ -25,7 +26,7 @@
 }
 
 .messageTextField {
-  float: bottom;
+  width: auto;
   height: 15vh;
   border: 2px gray solid ;
   background-color: ghostwhite;

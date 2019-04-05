@@ -29,6 +29,7 @@ li {
 }
 
 .messageList {
+    padding-right: 0.5em;
     height: 85vh;
     overflow: auto;
 }

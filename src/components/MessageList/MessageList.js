@@ -7,11 +7,11 @@ class MessageList extends Component {
         this.state = {
             msgs: []
         }
-        this.roomsRef = this.props.firebase.database().ref('messages');
+        this.messagesRef = this.props.firebase.database().ref('messages');
     }
 
     componentDidMount() {
-        this.roomsRef.on('child_added', snapshot => {
+        this.messagesRef.on('child_added', snapshot => {
             const msgs = snapshot.val();
             this.setState({msgs: this.state.msgs.concat(msgs)})
         });
