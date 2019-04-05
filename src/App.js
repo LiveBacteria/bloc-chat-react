@@ -44,9 +44,9 @@ class App extends Component {
     return (
         <div className="App">
           <div className="roomId">
-            <h1>
+            <p>
               {this.state.activeRoom}
-            </h1>
+            </p>
           </div>
           <div className="roomListInfo">
             <RoomList firebase={firebase} setActiveRoom={this.setActiveRoom} activeRoom={this.state.activeRoom}/>

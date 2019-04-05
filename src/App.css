@@ -1,5 +1,6 @@
 
 .roomId {
+  height: 5vh;
   background-color: #666;
   top: 0;
   text-align: center;
@@ -7,18 +8,23 @@
   padding: .05em;
 }
 
+.roomId p {
+  color: red;
+  top: 2vh;
+}
+
 .roomListInfo {
   background-color: darkgray;
   float: left;
-  width: 30%;
-  height: 100%;
+  width: 15%;
+  height: 100vh;
   padding: 0.05em;
 }
 
 .roomContent {
   padding: 0.05em;
-  width: 70%;
-  height: 100%;
+  width: auto;
+  height: 100vh;
   background-color: deeppink;
 
 }
