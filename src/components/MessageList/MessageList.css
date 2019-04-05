@@ -28,16 +28,7 @@ li {
     display: flex;
 }
 
-.roomContent {
-    border: 2px solid darkgrey;
-    border-radius: 2px;
-    padding: 0.05em;
-    width: auto;
-    height: 100vh;
-    background-color: lightblue;
-}
-
 .messageList {
-    height: 100%;
+    height: 85vh;
     overflow: auto;
 }
