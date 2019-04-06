@@ -1,10 +1,9 @@
-
 import React, { Component } from 'react';
 
 class User extends Component {
     componentDidMount() {
         this.props.firebase.auth().onAuthStateChanged(user => {
-            this.props.setUser(user);
+                this.props.setUser(user);
         })
     }
 
@@ -23,9 +22,7 @@ class User extends Component {
     }
 
     googleSignOut() {
-        //console.log("Attempting to sign out..");
         this.props.firebase.auth().signOut();
-        //console.log("Current user is: " + this.props.user);
     }
 
     render() {

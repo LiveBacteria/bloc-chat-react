@@ -17,8 +17,9 @@ class RoomList extends Component {
     componentDidMount() {
         //const newRoomList = this.state.rooms;
         this.roomsRef.on('child_added', snapshot => {
+            //newRoomList.concat(snapshot);
             const room = snapshot.val();
-            room.key = snapshot.key;
+            //room.key = snapshot.key;
             this.setState({rooms: this.state.rooms.concat( room )})
         });
     }
@@ -28,13 +29,13 @@ class RoomList extends Component {
     }
 
     handleSubmit (e) {
-        e.preventDefault();
         this.createRoom(this.state.value);
         this.setState({value: ''});
+        e.preventDefault();
     }
 
     createRoom (roomInfo) {
-        this.roomsRef.push({name: roomInfo, createdAt: this.props.firebase.database.ServerValue.TIMESTAMP});
+        this.roomsRef.push({name: roomInfo, createdAt: this.props.firebase.database.ServerValue.TIMESTAMP})
     }
 
     render() {
@@ -48,15 +49,12 @@ class RoomList extends Component {
                 <section id="rooms">
                     <div>
                         {this.state.rooms.map((room, index) =>
-                            (room.hidden !== true) ?
-                                <div key={index} onClick={() => this.props.setActiveRoom(room)} className={
-                                    (this.props.activeRoom === room.name) ? 'active' : ''
-                                }>
-                                    {room.name}
-                                </div>
-                                :
-                                ''
-                        )
+                            <div key={index} onClick={() => this.props.setActiveRoom(room)} className={
+                                (this.props.activeRoom === room.name) ? 'active' : ''
+                            }>
+                                {room.name}
+                            </div>
+                            )
                         }
                         {this.state.value}
                     </div>

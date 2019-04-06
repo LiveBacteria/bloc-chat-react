@@ -38,7 +38,6 @@ class App extends Component {
   }
 
   setUser (user) {
-    //alert("Works!");
     this.setState({user: user});
   }
 
@@ -61,7 +60,7 @@ class App extends Component {
               <MessageList firebase={firebase} activeRoom={this.state.activeRoom} />
             </div>
             <div className="messageTextField">
-              <CreateMessage firebase={firebase} activeRoom={this.state.activeRoomId} activeUser={this.state.activeUser}/>
+              <CreateMessage firebase={firebase} activeRoomName={this.state.activeRoom} activeRoomId={this.state.activeRoomId} activeUser={this.state.user}/>
             </div>
           </div>
         </div>

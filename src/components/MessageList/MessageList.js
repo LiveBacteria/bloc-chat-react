@@ -5,9 +5,16 @@ class MessageList extends Component {
     constructor(props){
         super(props);
         this.state = {
-            msgs: []
+            msgs: [],
+            alterChoice: false
         }
-        this.messagesRef = this.props.firebase.database().ref('messages');
+        this.messagesRef = this.props.firebase.database().ref('messages_launch');
+        this.myRef = React.createRef();
+    }
+
+    componentDidUpdate () {
+        const elem = document.querySelector('.messageList'); //your ref to the element say testNode in your case;
+        elem.scrollTop = elem.scrollHeight;
     }
 
     componentDidMount() {
@@ -15,6 +22,26 @@ class MessageList extends Component {
             const msgs = snapshot.val();
             this.setState({msgs: this.state.msgs.concat(msgs)})
         });
+        /*
+        const target = document.querySelector(".messageList");
+        target.scrollTop = target.scrollHeight
+        */
+        /*
+        const scroll = document.querySelector('.messageList');
+        scroll.scrollTop = scroll.scrollHeight;
+        scroll.animate({scrollTop: scroll.scrollHeight});
+        */
+    }
+
+    alterDecider (choice) {
+        //console.log("Entered Alter Decider");
+        if(choice === true){
+            this.setState({alterChoice: false});
+            return 'alter';
+        }else{
+            this.setState({alterChoice: true});
+            return '';
+        }
     }
 
     parseHumanTimeDate (timestamp) {
@@ -30,8 +57,8 @@ class MessageList extends Component {
         return(
             <div>
                 {this.state.msgs.map((item, index) =>
-                    (item.roomId === this.props.activeRoom) ?
-                        <div key={'msg' + index}>
+                    (item.roomId === this.props.activeRoom || item.roomName === this.props.activeRoom) ?
+                        <div key={'msg' + index} >
                             <ul>
                                 <li className="username">{item.username}</li>
                                 <li className="timestamp">{this.parseHumanTimeDate(item.sentAt)}</li>
